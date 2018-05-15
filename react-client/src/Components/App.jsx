@@ -6,21 +6,28 @@ import NavBar from './HeaderComponent/NavBar';
 import Footer from './FooterComponent/Footer';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import About from './About';
+import Background from '../background.jpg';
 
 
 class App extends Component {
     render() {
         return (
+
             <Router>
+
                 <MuiThemeProvider>
-                <div>
-                    <NavBar />
-                    <Route name="home" exact path="/" component={HomePage} />
-                    <Footer />
-                </div>
+                    <div style={{ backgroundImage: `url(${Background})`, height: 1200}}>
+                        <NavBar />
+                        <Route name="home" exact path="/" component={HomePage} />
+                        <Route path="/about" component={About}/>
+                        <Footer />
+                    </div>
                 </MuiThemeProvider>
+
             </Router>
         )
     }
+
 }
 export default App;

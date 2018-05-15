@@ -3,6 +3,10 @@ import RaisedButton from 'material-ui/RaisedButton'
 import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
+import { Link } from 'react-router-dom'
+import { URLProvider } from 'react-url';
+
+
 
 
 const style = {
@@ -17,7 +21,14 @@ class HomePage extends Component {
                 <Paper style={style}>
                     <Menu>
                         <MenuItem primaryText="QLearning" />
-                        <MenuItem primaryText="About Me" />
+                        <MenuItem
+                            primaryText="About Me"
+                            containerElement={<Link to="/about" />}
+                        />
+                        <MenuItem
+                            primaryText="Profile"
+                            containerElement={<Link to="/profile" />}
+                        />
                     </Menu>
                 </Paper>
             </div>
