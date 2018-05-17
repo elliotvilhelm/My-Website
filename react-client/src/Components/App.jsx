@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 import HomePage from './HomePage';
 import NavBar from './HeaderComponent/NavBar';
 import Footer from './FooterComponent/Footer';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import About from './About';
-import Background from '../background.jpg';
+import '../styles/style.css'
+
+
+// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 
 class App extends Component {
@@ -15,18 +19,19 @@ class App extends Component {
         return (
 
             <Router>
-
+                {/*<MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>*/}
                 <MuiThemeProvider>
-                    <div style={{ backgroundImage: `url(${Background})`, height: 1200}}>
-                        <NavBar />
+
+                    <div>
+
+                        {/*<NavBar />*/}
                         <Route name="home" exact path="/" component={HomePage} />
                         <Route path="/about" component={About}/>
                         <Footer />
                     </div>
                 </MuiThemeProvider>
-
             </Router>
-        )
+        );
     }
 
 }

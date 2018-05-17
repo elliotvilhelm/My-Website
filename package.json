@@ -10,6 +10,8 @@
     "build": "webpack -p",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js"
+    "postinstall": "webpack",
+    "heroku-postbuild": "webpack -p"
   },
   "author": "Elliot V Pourmand",
   "license": "ISC",
@@ -19,13 +21,19 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.2",
+    "bundle": "^2.1.0",
+    "css-loader": "^0.28.11",
     "express": "^4.16.3",
-    "material-ui": "^0.20.0",
+    "material-ui": "^0.20.1",
+    "material-ui-background": "^0.1.2",
+    "material-ui-image": "^2.1.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-url": "^1.0.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
     "webpack": "^4.8.2"
   },
   "devDependencies": {

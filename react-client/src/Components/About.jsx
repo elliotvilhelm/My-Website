@@ -16,10 +16,9 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <h1>Hey my name is Elliot, I love to code!</h1>
-                <p>RESUME blah blah</p>
+                <h3>Resume 🌏</h3>
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vTP2bTMTLN155e4uPs6Wo4_pZ6Lpbh2yw3tXnqpMekAw2s4t8xNzwVOcIfW-cnFA1kFYnjRpbdNe_vv/pub?embedded=true" width="100%" height="800"/>
             </div>
-
         )
     }
 }
