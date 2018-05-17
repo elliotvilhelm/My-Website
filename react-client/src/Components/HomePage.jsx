@@ -12,6 +12,9 @@ import {AppBar, Tabs, Tab} from 'material-ui'
 // import FlatButton from 'material-ui/FlatButton';
 import Image from 'material-ui-image'
 import Text from 'material-ui/TextField'
+import Img from 'react-image'
+
+
 
 
 
@@ -47,11 +50,10 @@ class HomePage extends Component {
                                     <a href="https://github.com/elliotvilhelm/IZII"> IZII</a>.
 
                                 </p>
-
                                 <h2>Check Out my <a href="https://github.com/elliotvilhelm">GitHub!</a></h2>
-
-                                <Image
+                                <Img
                                     src={selfie}
+                                    // src={require('../images/selfie.jpg')}
                                     className="img-circle"
                                 />
                             </div>

@@ -26,7 +26,7 @@ class App extends Component {
 
                         {/*<NavBar />*/}
                         <Route name="home" exact path="/" component={HomePage} />
-                        <Route path="/about" component={About}/>
+                        {/*<Route path="/about" component={About}/>*/}
                         <Footer />
                     </div>
                 </MuiThemeProvider>
