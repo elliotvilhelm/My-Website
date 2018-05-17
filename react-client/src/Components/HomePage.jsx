@@ -17,7 +17,6 @@ import Text from 'material-ui/TextField'
 
 const style = {
     textAlign: 'center',
-    backgroundColor: 'white',
     display: 'inline-block'
 
 };
@@ -56,12 +55,12 @@ class HomePage extends Component {
                                     className="img-circle"
                                 />
                             </div>
-                                <div className="large-div">
-                                <Image
-                                    src={UCSD}
-                                    className="img-transparent"
-                                />
-                            </div>
+                                {/*<div className="large-div">*/}
+                                {/*<Image*/}
+                                    {/*src={UCSD}*/}
+                                    {/*className="img-transparent"*/}
+                                {/*/>*/}
+                            {/*</div>*/}
                             </Paper>
 
 
