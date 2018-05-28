@@ -26,6 +26,7 @@
     "express": "^4.16.3",
     "material-ui": "^0.20.1",
     "material-ui-background": "^0.1.2",
+    "python-shell": "^0.5.0",
     "react": "^16.3.2",
     "react-chess": "^1.1.0",
     "react-dom": "^16.3.2",

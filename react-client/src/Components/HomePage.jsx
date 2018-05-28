@@ -40,6 +40,17 @@ var styles = {
         // fontcolor: '#000FFF'
     },
 };
+
+
+var PythonShell = require('python-shell');
+
+PythonShell.run('../sample.py', function (err) {
+    if (err) throw err;
+    console.log('finished');
+});
+
+
+
 class HomePage extends Component {
     constructor(props) {
         super(props);
