@@ -31,10 +31,11 @@ var styles = {
 
 
 
+
 class HomePage extends Component {
     constructor(props) {
         super(props);
-        this.state = {pieces: Chess.getDefaultLineup()};
+        this.state = {data: "idk!!", pieces: Chess.getDefaultLineup()};
         this.handleMovePiece = this.handleMovePiece.bind(this);
     }
 
@@ -60,7 +61,7 @@ class HomePage extends Component {
                                 <div className="center-div">
                                     <h1>Elliot Vilhelm Pourmand</h1>
                                     <h4>Computer Scientist studying at the University of California San Diego.
-                                        <br/>Check Out my <a href="https://github.com/elliotvilhelm">GitHub!</a>
+                                        <br/>Check Out my <a href="https://github.com/ElliotVilhelm">GitHub!</a>
                                     </h4>
                                     <Img src={selfie} className="img-circle"/>
                                 </div>
@@ -72,8 +73,13 @@ class HomePage extends Component {
                         <Tab label="Chess Engine">
                             <div className="chess-div">
                             <Chess pieces={pieces} onMovePiece={this.handleMovePiece}/>
+                                this.
                             </div>
                             <h1>To be plugged in!</h1>
+                            <div>
+                                {/*<h1>{this.state.data ? <h1>Loading...</h1> : this.state.data}*/}
+                            </div>
+                            <h1>end</h1>
                         </Tab>
                         <Tab label="Resume">
                             <Center>
@@ -97,6 +103,7 @@ class HomePage extends Component {
 
 
     handleMovePiece(piece, fromSquare, toSquare) {
+        console.log("check ")
         console.log(piece);
         console.log(fromSquare);
         console.log(toSquare);
@@ -113,9 +120,12 @@ class HomePage extends Component {
             .filter(Boolean);
         this.setState({pieces: newPieces})
     }
+
 }
 
 function getComputerMove(board, piece, from_sq, to_sq) {
+    console.log("call me?")
+
 
     axios.get(`/chess`, {
         params: {
@@ -129,5 +139,8 @@ function getComputerMove(board, piece, from_sq, to_sq) {
             console.log(res.data)
         })
 }
+
+
+
 
 export default HomePage;
