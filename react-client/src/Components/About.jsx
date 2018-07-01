@@ -17,7 +17,7 @@ class HomePage extends Component {
         return (
             <div>
                 <h3>Resume 🌏</h3>
-                <iframe src="https://docs.google.com/document/d/e/2PACX-1vTP2bTMTLN155e4uPs6Wo4_pZ6Lpbh2yw3tXnqpMekAw2s4t8xNzwVOcIfW-cnFA1kFYnjRpbdNe_vv/pub?embedded=true" width="100%" height="800"/>
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vQuEKG84tB_EgsoYg-L1-BoYtaXDoCyD25wHlUPcvgKVcR4E0NdSyOfkWaDMjoELWDorMhbXgjayPDV/pub?embedded=true" width="100%" height="800"/>
             </div>
         )
     }

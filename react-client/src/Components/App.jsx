@@ -6,13 +6,9 @@ import NavBar from './HeaderComponent/NavBar';
 import Footer from './FooterComponent/Footer';
 import About from './About';
 import '../styles/style.css'
-
-
 // import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 
 class App extends Component {
     render() {

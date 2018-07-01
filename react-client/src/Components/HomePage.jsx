@@ -1,62 +1,51 @@
 import React, {Component} from 'react';
-import RaisedButton from 'material-ui/RaisedButton'
 import Paper from 'material-ui/Paper';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import { Link } from 'react-router-dom'
 import { URLProvider } from 'react-url';
-import UCSD from '../images/UCSD1.jpg'
 import selfie from '../images/selfie.jpg'
 import '../styles/style.css'
-import {AppBar, Tabs, Tab} from 'material-ui'
-// import FlatButton from 'material-ui/FlatButton';
-import Image from 'material-ui-image'
-import Text from 'material-ui/TextField'
-import Img from 'react-image'
+import {AppBar, Tabs, Tab} from 'material-ui';
+import Img from 'react-image';
 
-
-
-
+import Chess from 'react-chess';
+import Center from 'react-center';
+import axios from 'axios'
 
 const style = {
     textAlign: 'center',
-    display: 'inline-block'
-
+    display: 'inline-block',
+    width: "80%"
 };
 
 
-const ReactDOM = require('react-dom')
-const Chess = require('react-chess')
 
 var styles = {
-
     appBar: {
         flexWrap: 'wrap',
     },
     tabs: {
         width: '100%',
         fontsize: 500,
-        // fontweight: 'bold',
-        // fontcolor: '#000FFF'
     },
 };
 
-
-var PythonShell = require('python-shell');
-
-PythonShell.run('../sample.py', function (err) {
-    if (err) throw err;
-    console.log('finished');
-});
 
 
 
 class HomePage extends Component {
     constructor(props) {
         super(props);
-
         this.state = {pieces: Chess.getDefaultLineup()};
         this.handleMovePiece = this.handleMovePiece.bind(this);
+    }
+
+    componentDidMount() {
+        axios.get(`/chess`)
+            .then(res => {
+                const persons = res.data;
+                console.log("hit!")
+                console.log(persons)
+                console.log("end")
+            })
     }
     render() {
         const {pieces} = this.state;
@@ -66,44 +55,38 @@ class HomePage extends Component {
                 <AppBar title="" style={styles.appBar}>
                     <Tabs style={styles.tabs}>
                         <Tab label="Home" buttonStyle={{fontsize: 40, fontweight: 'bold'}}>
-
-
+                            <Center>
                             <Paper style={style}>
                                 <div className="center-div">
                                     <h1>Elliot Vilhelm Pourmand</h1>
-                                    <p> I am a Computer Scientist studying at the
-                                        University of California San Diego. My interests are in computational theory
-                                        and deep learning. I am very passionate about Algorithms and Data Structures. I
-                                        enjoy chess programming and have written a Python Chess Engine called
-                                        <a href="https://github.com/elliotvilhelm/IZII"> IZII</a>.
-
-
-                                    </p>
-                                    <h2>Check Out my <a href="https://github.com/elliotvilhelm">GitHub!</a></h2>
-                                    <Img
-                                        src={selfie}
-                                        className="img-circle"
-                                    />
+                                    <h4>Computer Scientist studying at the University of California San Diego.
+                                        <br/>Check Out my <a href="https://github.com/elliotvilhelm">GitHub!</a>
+                                    </h4>
+                                    <Img src={selfie} className="img-circle"/>
                                 </div>
                             </Paper>
+                            </Center>
 
 
                         </Tab>
                         <Tab label="Chess Engine">
+                            <div className="chess-div">
                             <Chess pieces={pieces} onMovePiece={this.handleMovePiece}/>
-                            <p>To be plugged in soon!</p>
+                            </div>
+                            <h1>To be plugged in!</h1>
                         </Tab>
                         <Tab label="Resume">
+                            <Center>
                             <div>
                                 <iframe
-                                    src="https://docs.google.com/document/d/e/2PACX-1vTP2bTMTLN155e4uPs6Wo4_pZ6Lpbh2yw3tXnqpMekAw2s4t8xNzwVOcIfW-cnFA1kFYnjRpbdNe_vv/pub?embedded=true"
-                                    width="100%" height="800"/>
+                                    src="https://docs.google.com/document/d/e/2PACX-1vQuEKG84tB_EgsoYg-L1-BoYtaXDoCyD25wHlUPcvgKVcR4E0NdSyOfkWaDMjoELWDorMhbXgjayPDV/pub?embedded=true"
+                                    width="800px"
+                                    height="1000px"
+                                    align="center"
+                                >
+                                </iframe>
                             </div>
-                        </Tab>
-
-                        <Tab label="About Me">
-                            <div>
-                            </div>
+                            </Center>
                         </Tab>
                     </Tabs>
                 </AppBar>
@@ -112,13 +95,12 @@ class HomePage extends Component {
         )
     }
 
-    // check state ( game over? , turn ?) .. updateState()
-    // want to check from square and to square legality
-    // allow or block move
+
     handleMovePiece(piece, fromSquare, toSquare) {
         console.log(piece);
         console.log(fromSquare);
         console.log(toSquare);
+        getComputerMove(this.state.pieces, piece, fromSquare, toSquare);
         const newPieces = this.state.pieces
             .map((curr, index) => {
                 if (piece.index === index) {
@@ -131,6 +113,21 @@ class HomePage extends Component {
             .filter(Boolean);
         this.setState({pieces: newPieces})
     }
+}
+
+function getComputerMove(board, piece, from_sq, to_sq) {
+
+    axios.get(`/chess`, {
+        params: {
+            board: `${board}`,
+            piece_name: `${piece.name}`,
+            piece_index: `${piece.index}`,
+            from_square: `${from_sq}`,
+            to_square: `${to_sq}`
+        }})
+        .then(res => {
+            console.log(res.data)
+        })
 }
 
 export default HomePage;
