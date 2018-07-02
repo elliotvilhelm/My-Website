@@ -37,19 +37,25 @@ class HomePage extends Component {
         super(props);
         this.state = {data: "idk!!", pieces: Chess.getDefaultLineup()};
         this.handleMovePiece = this.handleMovePiece.bind(this);
+        this.getComputerMove = this.getComputerMove.bind(this);
+        this.getPiece = this.getPiece.bind(this);
     }
 
     componentDidMount() {
-        axios.get(`/chess`)
-            .then(res => {
-                const persons = res.data;
-                console.log("hit!")
-                console.log(persons)
-                console.log("end")
-            })
+        // this.handleMovePiece(this.state.pieces[0], null, 'd5')
+        // console.log("did rook update")
+        // console.log(this.state.pieces)
+        // console.log("end rook update chekc")
+        //
+        // this.setState({pieces: [this.state.pieces[0]]})
+        // console.log("comp mount piece")
+        // console.log(this.state.pieces)
+        // console.log("end comp mount piece")
     }
+
+
+
     render() {
-        const {pieces} = this.state;
 
         return (
             <div>
@@ -72,14 +78,8 @@ class HomePage extends Component {
                         </Tab>
                         <Tab label="Chess Engine">
                             <div className="chess-div">
-                            <Chess pieces={pieces} onMovePiece={this.handleMovePiece}/>
-                                this.
+                            <Chess pieces={this.state.pieces} onMovePiece={this.handleMovePiece}/>
                             </div>
-                            <h1>To be plugged in!</h1>
-                            <div>
-                                {/*<h1>{this.state.data ? <h1>Loading...</h1> : this.state.data}*/}
-                            </div>
-                            <h1>end</h1>
                         </Tab>
                         <Tab label="Resume">
                             <Center>
@@ -101,15 +101,27 @@ class HomePage extends Component {
         )
     }
 
+    getPiece(square) {
+        var i = 0;
+        for (let p of this.state.pieces) {
+            if (p.split('@')[1] === square) {
+                return [p[0], i];
+            }
+            i += 1;
+        }
+        return "not found"
+    }
 
     handleMovePiece(piece, fromSquare, toSquare) {
-        console.log("check ")
-        console.log(piece);
-        console.log(fromSquare);
-        console.log(toSquare);
-        getComputerMove(this.state.pieces, piece, fromSquare, toSquare);
+
+        // console.log("from sq")
+        // console.log(fromSquare)
+        console.log(piece)
+        // console.log(toSquare)
+        // console.log("end printing from and to sq")
         const newPieces = this.state.pieces
             .map((curr, index) => {
+                console.log(piece.index, "  ", index)
                 if (piece.index === index) {
                     return `${piece.name}@${toSquare}`
                 } else if (curr.indexOf(toSquare) === 2) {
@@ -119,26 +131,53 @@ class HomePage extends Component {
             })
             .filter(Boolean);
         this.setState({pieces: newPieces})
+        // this.setState({pieces: []})
+        // console.log("logging pieaces")
+        // console.log(this.state.pieces)
+        // console.log("done logging pieces")
+        this.getComputerMove(this.state.pieces, piece, fromSquare, toSquare);
+        // console.log("logging output")
+        // console.log(output)
+        // console.log("finished logging output")
+    }
+
+    getComputerMove(board, piece, from_sq, to_sq) {
+        var result = "empty";
+        axios.get(`/chess`, {
+            params: {
+                board: `${board}`,
+                piece_name: `${piece.name}`,
+                piece_index: `${piece.index}`,
+                from_square: `${from_sq}`,
+                to_square: `${to_sq}`
+            }})
+            .then(res => {
+                result = res.data;
+                var moves = result.split(',')
+                var move_piece = this.getPiece(moves[0])
+                var move_piece_index = move_piece[1]
+                var move_piece_name = move_piece[0]
+                var toSquare = moves[1];
+                const newPieces = this.state.pieces
+                    .map((curr, index) => {
+                        console.log(move_piece_index, "  ", index)
+                        if (move_piece_index === index) {
+                            console.log("found your boy")
+                            return `${move_piece_name}@${toSquare}`
+                        } else if (curr.indexOf(toSquare) === 2) {
+                            return false // To be removed from the board
+                        }
+                        return curr
+                    })
+                    .filter(Boolean);
+                this.setState({pieces: newPieces})
+
+            });
     }
 
 }
 
-function getComputerMove(board, piece, from_sq, to_sq) {
-    console.log("call me?")
 
-
-    axios.get(`/chess`, {
-        params: {
-            board: `${board}`,
-            piece_name: `${piece.name}`,
-            piece_index: `${piece.index}`,
-            from_square: `${from_sq}`,
-            to_square: `${to_sq}`
-        }})
-        .then(res => {
-            console.log(res.data)
-        })
-}
 
 
 

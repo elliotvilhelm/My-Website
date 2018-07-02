@@ -34,14 +34,19 @@ var options = {
 
 app.get('/chess', (req, res) => {
 
-    options['args'] = [req.query['board'], "1", "-1", "0", "0", "0000"]   // blacks turn (computer play)
+    options['args'] = [req.query['board'], "1", "-1", "0", "1", "0000"]   // blacks turn (computer play)
     console.log(options['args'])
     PythonShell.run('test.py', options, function (err, results) {
 
         if (err) throw err;
         console.log('results: %j', results);
-        console.log(req.query)
-        res.send(results.toString())
+        // console.log(req.query)
+        if (results != null) {
+            console.log("logging results")
+            console.log(results.toString())
+            console.log("finished logging results")
+            res.send(results.toString())
+        }
     });
 });
 
