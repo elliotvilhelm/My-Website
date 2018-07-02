@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import { URLProvider } from 'react-url';
-import selfie from '../images/selfie.jpg'
+import selfie from '../images/selfie.png';
+import github_icon from '../images/Octocat.jpg'
+import ucsd from '../images/UCSD.png'
+// import '../styles/style.css?ts=<?=time()?>'
 import '../styles/style.css'
 import {AppBar, Tabs, Tab} from 'material-ui';
 import Img from 'react-image';
@@ -27,8 +30,6 @@ var styles = {
         fontsize: 500,
     },
 };
-
-
 
 
 
@@ -58,40 +59,98 @@ class HomePage extends Component {
     render() {
 
         return (
+
             <div>
                 <AppBar title="" style={styles.appBar}>
                     <Tabs style={styles.tabs}>
                         <Tab label="Home" buttonStyle={{fontsize: 40, fontweight: 'bold'}}>
                             <Center>
-                            <Paper style={style}>
-                                <div className="center-div">
-                                    <h1>Elliot Vilhelm Pourmand</h1>
-                                    <h4>Computer Scientist studying at the University of California San Diego.
+                                <Paper style={style}>
+                                    <div className="center-div">
+                                        <h1>Elliot Vilhelm Pourmand</h1>
+                                        <Img src={selfie} className="img"/>
+                                        <h4>Computer Scientist studying at the</h4>
+                                        <h4>University of California San Diego.</h4>
+                                        <Img src={ucsd} className="img-right"/>
                                         <br/>Check Out my <a href="https://github.com/ElliotVilhelm">GitHub!</a>
-                                    </h4>
-                                    <Img src={selfie} className="img-circle"/>
-                                </div>
-                            </Paper>
+                                        <Img src={github_icon} className="img-right"/>
+                                    </div>
+                                    <div>
+                                        <table className="center">
+                                            <tr>
+                                                <th>Language</th>
+                                                <th>Proficiency</th>
+                                            </tr>
+                                            <tr>
+
+                                                <th>Python:</th>
+                                                <th>
+                                                    <progress value="75" max="100">
+                                                    </progress>
+                                                </th>
+                                            </tr>
+                                            <tr>
+
+                                                <th>Java:</th>
+                                                <th>
+                                                    <progress value="22" max="100">
+                                                    </progress>
+                                                </th>
+                                            </tr>
+                                            <tr>
+
+                                                <th>C:</th>
+                                                <th>
+                                                    <progress value="50" max="100">
+                                                    </progress>
+                                                </th>
+                                            </tr>
+
+                                            <tr>
+                                                <th>C++:</th>
+                                                <th>
+                                                    <progress value="75" max="100">
+                                                    </progress>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Javascript:</th>
+                                                <th>
+                                                    <progress value="55" max="100">
+                                                    </progress>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Ruby on Rails:</th>
+                                                <th>
+                                                    <progress value="45" max="100">
+                                                    </progress>
+                                                </th>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </Paper>
                             </Center>
 
 
                         </Tab>
                         <Tab label="Chess Engine">
                             <div className="chess-div">
-                            <Chess pieces={this.state.pieces} onMovePiece={this.handleMovePiece}/>
+                                <Chess pieces={this.state.pieces} onMovePiece={this.handleMovePiece}/>
                             </div>
                         </Tab>
                         <Tab label="Resume">
                             <Center>
-                            <div>
-                                <iframe
-                                    src="https://docs.google.com/document/d/e/2PACX-1vQuEKG84tB_EgsoYg-L1-BoYtaXDoCyD25wHlUPcvgKVcR4E0NdSyOfkWaDMjoELWDorMhbXgjayPDV/pub?embedded=true"
-                                    width="800px"
-                                    height="1000px"
-                                    align="center"
-                                >
-                                </iframe>
-                            </div>
+                                <div>
+                                    <iframe
+                                        src="https://docs.google.com/document/d/e/2PACX-1vQuEKG84tB_EgsoYg-L1-BoYtaXDoCyD25wHlUPcvgKVcR4E0NdSyOfkWaDMjoELWDorMhbXgjayPDV/pub?embedded=true"
+                                        width="800px"
+                                        height="1000px"
+                                        align="center"
+                                    >
+                                    </iframe>
+                                </div>
                             </Center>
                         </Tab>
                     </Tabs>
