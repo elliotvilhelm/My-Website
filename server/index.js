@@ -56,6 +56,24 @@ app.get('/chess', (req, res) => {
     }
 });
 
+app.get('/validate_move', (req, res) => {
+    options['args'] = [req.query['board'], "0", "-1", "0", "1", "0000", req.query['piece_position'],
+        req.query['to_square']]
+    try {
+        PythonShell.run('validate_move.py', options, function(err, results) {
+            if (err) throw err;
+            console.log('results: %j', results);
+            if (results != null) {
+                res.send(results.toString())
+            }
+        });
+
+        }
+        catch (err) {
+        console.log("had an error ... ooooops")
+    }
+});
+
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);

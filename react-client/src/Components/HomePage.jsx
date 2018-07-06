@@ -36,12 +36,23 @@ var styles = {
 class HomePage extends Component {
     constructor(props) {
         super(props);
+
         this.state = {data: "idk!!", pieces: Chess.getDefaultLineup()};
         this.handleMovePiece = this.handleMovePiece.bind(this);
         this.getComputerMove = this.getComputerMove.bind(this);
         this.getPiece = this.getPiece.bind(this);
+        this.current_pieces = Chess.getDefaultLineup();
+        this.update_pieces = this.update_pieces.bind(this);
+        this.preventDragHandler = this.preventDragHandler.bind(this);
     }
+    update_pieces () {
+        this.setState({pieces: lineup},function(){
+            console.log("force update")
+        });
 
+    }
+    preventDragHandler () {
+    }
     componentDidMount() {
         // this.handleMovePiece(this.state.pieces[0], null, 'd5')
         // console.log("did rook update")
@@ -172,32 +183,39 @@ class HomePage extends Component {
     }
 
     handleMovePiece(piece, fromSquare, toSquare) {
+        // this.update_pieces()
 
-        // console.log("from sq")
-        // console.log(fromSquare)
-        console.log(piece)
-        // console.log(toSquare)
-        // console.log("end printing from and to sq")
-        const newPieces = this.state.pieces
-            .map((curr, index) => {
-                console.log(piece.index, "  ", index)
-                if (piece.index === index) {
-                    return `${piece.name}@${toSquare}`
-                } else if (curr.indexOf(toSquare) === 2) {
-                    return false // To be removed from the board
+        var result = "empty";
+        axios.get(`/validate_move`, {
+            params: {
+                board: `${this.state.pieces}`,
+                piece_position: `${piece.position}`,
+                to_square: `${toSquare}`
+            }})
+            .then(res => {
+                result = res.data;
+                const newPieces = this.state.pieces
+                    .map((curr, index) => {
+                        if (piece.index === index) {
+                            return `${piece.name}@${toSquare}`
+                        } else if (curr.indexOf(toSquare) === 2) {
+                            return false // To be removed from the board
+                        }
+                        return curr
+                    })
+                    .filter(Boolean);
+                if (result === true) {
+                    this.setState({pieces: newPieces});
+                    this.getComputerMove(this.state.pieces, piece, fromSquare, toSquare);
+                    this.current_pieces = newPieces
+                    return true
                 }
-                return curr
-            })
-            .filter(Boolean);
-        this.setState({pieces: newPieces})
-        // this.setState({pieces: []})
-        // console.log("logging pieaces")
-        // console.log(this.state.pieces)
-        // console.log("done logging pieces")
-        this.getComputerMove(this.state.pieces, piece, fromSquare, toSquare);
-        // console.log("logging output")
-        // console.log(output)
-        // console.log("finished logging output")
+                else {
+                    this.setState({pieces: newPieces});
+                    this.setState({pieces: this.current_pieces})
+                    return false
+                }
+            });
     }
 
     getComputerMove(board, piece, from_sq, to_sq) {
@@ -219,9 +237,7 @@ class HomePage extends Component {
                 var toSquare = moves[1];
                 const newPieces = this.state.pieces
                     .map((curr, index) => {
-                        console.log(move_piece_index, "  ", index)
                         if (move_piece_index === index) {
-                            console.log("found your boy")
                             return `${move_piece_name}@${toSquare}`
                         } else if (curr.indexOf(toSquare) === 2) {
                             return false // To be removed from the board
@@ -230,6 +246,7 @@ class HomePage extends Component {
                     })
                     .filter(Boolean);
                 this.setState({pieces: newPieces})
+                this.current_pieces = newPieces
 
             });
     }
