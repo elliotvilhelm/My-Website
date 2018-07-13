@@ -7,6 +7,13 @@ const app = express();
 var PythonShell = require('python-shell');
 
 
+app.get('/Home', (req, res) => {
+    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+});
+app.get('/About', (req, res) => {
+    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+});
+
 
 
 app.use(bodyParser.json());
@@ -37,7 +44,7 @@ app.get('/chess', (req, res) => {
     options['args'] = [req.query['board'], "1", "-1", "0", "1", "0000"]   // blacks turn (computer play)
     console.log(options['args'])
     try {
-        PythonShell.run('test.py', options, function (err, results) {
+        PythonShell.run('react-utils/get_move.py', options, function (err, results) {
 
             if (err) throw err;
             console.log('results: %j', results);

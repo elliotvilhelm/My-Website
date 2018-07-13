@@ -12,15 +12,14 @@ const style = {
     margin: '40px 32px 16px 0',
 };
 
-class HomePage extends Component {
+class About extends Component {
     render() {
         return (
             <div>
-                <h3>Resume 🌏</h3>
                 <iframe src="https://docs.google.com/document/d/e/2PACX-1vQuEKG84tB_EgsoYg-L1-BoYtaXDoCyD25wHlUPcvgKVcR4E0NdSyOfkWaDMjoELWDorMhbXgjayPDV/pub?embedded=true" width="100%" height="800"/>
             </div>
         )
     }
 }
 
-export default HomePage;
+export default About;
