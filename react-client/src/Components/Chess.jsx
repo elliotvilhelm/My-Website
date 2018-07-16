@@ -49,9 +49,21 @@ class Chess extends Component {
                     <div className='banner-div'>
                         <img src={terminator} className='img-terminator'/>
                     </div>
+                    <div className='chess-top-div'>
+                        <h1>Can you beat my Chess Engine?</h1>
+                        <h3>Make a move, the engine will play back.</h3>
+                    </div>
                     <div className="chess-div">
-                        <h1>Can you beat my engine?</h1>
                         <ReactChess pieces={this.state.pieces} onMovePiece={this.handleMovePiece} allowMoves={this.state.allowMoves}/>
+                        <br/>
+                    </div>
+                    <div className='chess-info-div'>
+                    <h3>
+                        This Chess Engine is written in Python by myself. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️
+                    </h3>
+                    </div>
+                    <div className='chess-space-div'>
+
                     </div>
                 </Paper>
             </div>

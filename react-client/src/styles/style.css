@@ -36,7 +36,8 @@
     z-index: 1000;
     /*background: #6b6bb8 !important;*/
     /*background: radial-gradient(circle, black, darkblue, #4c81c9) !important;*/
-    background: url("../images/background.jpg") !important;
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("../images/background.jpg") !important;
+
     /*background-size: contain !important;*/
     background-size: cover !important;
     overflow-y: auto;
@@ -68,6 +69,7 @@
     bottom: 0;
     left: 50%;
     position: fixed;
+    /*z-index: 1;*/
 
 }
 .img-selfie {
@@ -86,6 +88,7 @@
     top: 20%;
     background: transparent;
     position: fixed;
+    /*z-index: 1;*/
 
 }
 .about-div {
@@ -112,13 +115,36 @@
 .banner-div:hover {
     background-color: #6b6bb8 !important;
 }
-.chess-div {
-    max-width: 55%;
-    max-height: 55%;
+.chess-top-div {
+    max-width: 100%;
     margin: auto;
-    padding-bottom: 1000px;
+    text-align: center;
+    /*z-index: 999;*/
+}
+.chess-div {
+    max-width: 50%;
+    max-height: 50%;
+    margin: auto;
+    padding-bottom: 750px;
+    /*z-index: 999;*/
 }
 
+.chess-info-div {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    max-width: 40%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+}
+.chess-space-div {
+    margin: auto;
+    height: 100px;
+    z-index: 1000;
+}
 .photo-div {
     display: inline-block;
     position: fixed;
