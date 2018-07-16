@@ -15,11 +15,10 @@
     padding: 0 10px !important;
 }
 .resume-div {
-    position: fixed;
-    left: 30%;
-    right: 10%;
-    top: 0;
-    bottom: 0;
+    margin: auto;
+    padding-top: 30px;
+    max-width: 60%;
+    max-height: 100%;
 }
 .background {
     top: 0;
@@ -94,7 +93,7 @@
     max-height: 20%;
     position: fixed;
     top: 25%;
-    right: -10%;
+    right: 0;
     text-align: center;
     margin: auto;
 
@@ -102,7 +101,8 @@
 .name-div {
     max-width: 100%;
     max-height: 20%;
-    position: fixed;
+    /*position: fixed;*/
+    padding-top: 20%;
     top: 30%;
     right: 28%;
     text-align: center;
@@ -197,7 +197,7 @@ table.center {
 h1 {
     color: #111;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: lighter;
     letter-spacing: -1px;
     line-height: 1;
@@ -206,7 +206,7 @@ h1 {
 
 h2 { color: #111;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 30px; font-weight: 300;
+    font-size: 40px; font-weight: 300;
     font-weight: lighter;
     line-height: 32px;
     margin: 0 0 10px;

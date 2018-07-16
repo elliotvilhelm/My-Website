@@ -29,7 +29,7 @@ class App extends Component {
                         <Route path="/Resume" component={Resume}/>
                     </Switch>
                 </BrowserRouter>
-                <Footer />
+                {/*<Footer />*/}
             </MuiThemeProvider>
         );
     }
