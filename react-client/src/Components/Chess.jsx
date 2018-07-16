@@ -13,7 +13,7 @@ class Chess extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {open: false, pieces: ReactChess.getDefaultLineup()};
+        this.state = {open: false, pieces: ReactChess.getDefaultLineup(), allowMoves: true};
         this.handleMovePiece = this.handleMovePiece.bind(this);
         this.getComputerMove = this.getComputerMove.bind(this);
         this.getPiece = this.getPiece.bind(this);
@@ -51,7 +51,7 @@ class Chess extends Component {
                     </div>
                     <div className="chess-div">
                         <h1>Can you beat my engine?</h1>
-                        <ReactChess pieces={this.state.pieces} onMovePiece={this.handleMovePiece}/>
+                        <ReactChess pieces={this.state.pieces} onMovePiece={this.handleMovePiece} allowMoves={this.state.allowMoves}/>
                     </div>
                 </Paper>
             </div>
@@ -70,6 +70,9 @@ class Chess extends Component {
     }
     handleMovePiece(piece, fromSquare, toSquare) {
         var result = "empty";
+        this.setState({allowMoves: false});
+
+
         axios.get(`/validate_move`, {
             params: {
                 board: `${this.state.pieces}`,
@@ -132,6 +135,7 @@ class Chess extends Component {
                 this.setState({pieces: newPieces})
                 this.current_pieces = newPieces
 
+                this.setState({allowMoves: true})
             });
     }
 
