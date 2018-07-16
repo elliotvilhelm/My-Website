@@ -13,7 +13,12 @@ app.get('/Home', (req, res) => {
 app.get('/About', (req, res) => {
     res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
 });
-
+app.get('/Chess', (req, res) => {
+    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+});
+app.get('/Resume', (req, res) => {
+    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+});
 
 
 app.use(bodyParser.json());
@@ -39,12 +44,12 @@ var options = {
     args: ["none"]
 };
 
-app.get('/chess', (req, res) => {
+app.get('/play-chess', (req, res) => {
 
     options['args'] = [req.query['board'], "1", "-1", "0", "1", "0000"]   // blacks turn (computer play)
-    console.log(options['args'])
+    console.log("options in play-chess: ", options['args'])
     try {
-        PythonShell.run('react-utils/get_move.py', options, function (err, results) {
+        PythonShell.run('get_move.py', options, function (err, results) {
 
             if (err) throw err;
             console.log('results: %j', results);
@@ -67,6 +72,7 @@ app.get('/validate_move', (req, res) => {
     options['args'] = [req.query['board'], "0", "-1", "0", "1", "0000", req.query['piece_position'],
         req.query['to_square']]
     try {
+        console.log("options in validate moves: ", options)
         PythonShell.run('validate_move.py', options, function(err, results) {
             if (err) throw err;
             console.log('results: %j', results);
