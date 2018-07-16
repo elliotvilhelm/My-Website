@@ -100,6 +100,7 @@ class Chess extends Component {
                 else {
                     this.setState({pieces: newPieces});
                     this.setState({pieces: this.current_pieces})
+                    this.setState({allowMoves: true})
                     return false
                 }
             });
