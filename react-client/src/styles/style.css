@@ -16,11 +16,10 @@
 }
 .resume-div {
     position: fixed;
-    left: 0;
-    right: 30%;
+    left: 30%;
+    right: 10%;
     top: 0;
     bottom: 0;
-    background-color: #307672;
 }
 .background {
     top: 0;
@@ -30,21 +29,26 @@
 }
 
 .paper {
-    display: inline-block;
-    right: 0;
-    left: 0;
+    position: fixed;
     top: 0;
     bottom: 0;
-    background-color: #0b97c4;
-    paddingTop: 20;
-    paddingBottom: 20;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    /*background: #6b6bb8 !important;*/
+    /*background: radial-gradient(circle, black, darkblue, #4c81c9) !important;*/
+    background: url("../images/background.jpg") !important;
+    /*background-size: contain !important;*/
+    background-size: cover !important;
+    overflow-y: auto;
 }
 .left-drawer {
     top: 0px !important;
     text-align: left !important;
-    width: 18% !important;
+    width: 15% !important;
     transform: translate(0%, 0px) !important;
-    background: #1b1e23 !important;
+    /*background: #1b1e23 !important;*/
+    background: transparent !important;
 }
 
 .center-div {
@@ -59,19 +63,72 @@
     justify-content: center;
 
 }
+
+.img-terminator {
+    background: transparent !important;
+    bottom: 0;
+    left: 50%;
+    position: fixed;
+
+}
+.img-selfie {
+    background: transparent;
+    max-height: 20%;
+    max-width: 20%;
+    border-radius: 50%;
+}
+.img-icon {
+    max-height: 100%;
+    max-width: 100%;
+}
+.banner-div {
+    max-width: 100%;
+    max-height: 40%;
+    top: 20%;
+    background: transparent;
+    position: fixed;
+
+}
+.about-div {
+    max-width: 100%;
+    max-height: 20%;
+    position: fixed;
+    top: 25%;
+    right: -10%;
+    text-align: center;
+    margin: auto;
+
+}
+.name-div {
+    max-width: 100%;
+    max-height: 20%;
+    position: fixed;
+    top: 30%;
+    right: 28%;
+    text-align: center;
+    margin: auto;
+
+}
+.banner-div:hover {
+    background-color: #6b6bb8 !important;
+}
 .chess-div {
     max-width: 55%;
     max-height: 55%;
     margin: auto;
-
+    padding-bottom: 800px;
 }
 
 .photo-div {
+    display: inline-block;
     position: fixed;
-    left: 0;
-    bottom: 85%;
-    width: 14%;
-    background-color: #307672;
+    height: 100px;
+    width: 300px;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    background: transparent;
+    /*background: #6b6bb8;*/
 }
 
 @font-face {
@@ -129,21 +186,7 @@
     background: #144d53;
     overflow-y: auto;
     padding-top: 1.5em;
-    /*position: fixed;*/
-    /*background-color: #96cbfe;*/
-    /*bottom: 0;*/
-    /*left: 10%;*/
-    /*width: 300px;*/
-    /*z-index: 1000;*/
 }
-
-/*.img-transparent {*/
-    /*!*background-color: white;*!*/
-    /*max-width: 100%;*/
-    /*max-height: 100%;*/
-    /*!*object-fit: cover;*!*/
-    /*display: block;*/
-/*}*/
 
 table.center {
     margin-left:auto;
@@ -154,19 +197,31 @@ table.center {
 h1 {
     color: #111;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 60px;
+    font-weight: lighter;
     letter-spacing: -1px;
     line-height: 1;
     text-align: center;
 }
 
 h2 { color: #111;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
     font-size: 30px; font-weight: 300;
+    font-weight: lighter;
     line-height: 32px;
     margin: 0 0 10px;
     text-align: center;
+    display: inline-block;
+}
+
+h3 { color: #111;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 25px; font-weight: 300;
+    font-weight: lighter;
+    line-height: 32px;
+    margin: 0 0 10px;
+    text-align: center;
+    display: inline-block;
 }
 
 p { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }

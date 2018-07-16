@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import RaisedButton from 'material-ui/RaisedButton'
 import Paper from 'material-ui/Paper';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import { Link } from 'react-router-dom'
 import SideBar from "./SideBar";
+import '../styles/style.css'
+import selfie from '../images/selfie.png'
 
 
 
@@ -18,9 +16,19 @@ class About extends Component {
         return (
             <div>
                 <SideBar/>
-                <div className='resume-div'>
-                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vQuEKG84tB_EgsoYg-L1-BoYtaXDoCyD25wHlUPcvgKVcR4E0NdSyOfkWaDMjoELWDorMhbXgjayPDV/pub?embedded=true" width="100%" height="800"/>
-                </div>
+                <Paper className='paper'>
+                    <div className='about-div'>
+                        <img src={selfie} className='img-selfie'/>
+                        <div>
+                            <h1>💻 Software Engineer</h1>
+                            <h2>University of California San Diego</h2>
+                            <br/>
+                            <h2>Zendesk</h2>
+                            <br/>
+                            <h3>Los Angeles ✈️  San Francisco ✈️ San Diego</h3>
+                        </div>
+                    </div>
+                </Paper>
             </div>
         )
     }

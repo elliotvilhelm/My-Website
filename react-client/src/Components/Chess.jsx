@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import axios from "axios/index";
 import ReactChess from 'react-chess'
 import SideBar from './SideBar'
+import Paper from 'material-ui/Paper'
+import '../styles/style.css'
+import terminator from '../images/terminator.png'
 
 
 
@@ -40,9 +43,17 @@ class Chess extends Component {
     }
     render() {
         return (
-            <div className="chess-div">
+            <div>
                 <SideBar/>
-                <ReactChess pieces={this.state.pieces} onMovePiece={this.handleMovePiece}/>
+                <Paper className='paper'>
+                    <div className='banner-div'>
+                        <img src={terminator} className='img-terminator'/>
+                    </div>
+                    <div className="chess-div">
+                        <h1>Can you beat my engine?</h1>
+                        <ReactChess pieces={this.state.pieces} onMovePiece={this.handleMovePiece}/>
+                    </div>
+                </Paper>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import background from '../images/blue_background.png';
+import background from '../images/background.jpg';
 
 const style = {
     display: 'inline-block',
