@@ -24,7 +24,7 @@ try:
     state[7] = state[0].index('k')
 
 
-    move = best_move(state, 3)
+    move = best_move(state, 2)
 
     piece_at_from_sq = state[0][move[0]]
     source_sq_RF = list(sq64_to_RF(int_sq120_sq64()[move[0]]))
