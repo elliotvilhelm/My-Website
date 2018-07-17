@@ -30,13 +30,6 @@ app.use(express.static(`${__dirname}/../react-client/dist`));
 // init_state = [init_board, 0, -1, 0, 1, [0, 0, 0, 0], init_board.index('K'), init_board.index('k')]
 
 
-var board = "";
-var move = "1";
-var piece = "";
-var index = "";
-var from_sq = "";
-var to_sq = "";
-
 
 var options = {
     mode: 'text',
@@ -46,18 +39,14 @@ var options = {
 
 app.get('/play-chess', (req, res) => {
 
-    options['args'] = [req.query['board'], "1", "-1", "0", "1", "0000"]   // blacks turn (computer play)
+    options['args'] = [req.query['board'], "1", "-1", "0", "1", req.query['castle_perms']]   // blacks turn (computer play)
     console.log("options in play-chess: ", options['args'])
     try {
         PythonShell.run('get_move.py', options, function (err, results) {
 
             if (err) throw err;
             console.log('results: %j', results);
-            // console.log(req.query)
             if (results != null) {
-                console.log("logging results")
-                console.log(results.toString())
-                console.log("finished logging results")
                 res.send(results.toString())
             }
         });
@@ -69,13 +58,14 @@ app.get('/play-chess', (req, res) => {
 });
 
 app.get('/validate_move', (req, res) => {
-    options['args'] = [req.query['board'], "0", "-1", "0", "1", "0000", req.query['piece_position'],
+    options['args'] = [req.query['board'], "0", "-1", "0", "1", req.query['castle_perms'], req.query['piece_position'],
         req.query['to_square']]
+
     try {
-        console.log("options in validate moves: ", options)
         PythonShell.run('validate_move.py', options, function(err, results) {
             if (err) throw err;
-            console.log('results: %j', results);
+            console.log("with %s", req.query['castle_perms'])
+            console.log('results of validate: %j', results);
             if (results != null) {
                 res.send(results.toString())
             }
