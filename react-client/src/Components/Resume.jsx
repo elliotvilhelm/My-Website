@@ -14,7 +14,7 @@ class Resume extends Component {
                 <SideBar/>
                 <Paper className='paper'>
                     <div className='resume-div'>
-                        <iframe src="https://drive.google.com/file/d/1eKi6yOeRiBpsnnVqOod5qfm-6FsM4-dk/preview" width="100%" height="800"></iframe>
+                        <iframe src="https://drive.google.com/file/d/1eKi6yOeRiBpsnnVqOod5qfm-6FsM4-dk/preview" width="100%" height="100%"></iframe>
                     </div>
                 </Paper>
             </div>

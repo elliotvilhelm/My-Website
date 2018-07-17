@@ -17,6 +17,11 @@
 .resume-div {
     margin: auto;
     padding-top: 30px;
+    height: 95%;
+    width: 50%;
+    bottom: 0;
+    top: 0;
+    position: relative;
     max-width: 60%;
     max-height: 100%;
 }
