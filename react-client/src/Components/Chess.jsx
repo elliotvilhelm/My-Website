@@ -56,12 +56,17 @@ class Chess extends Component {
                     <div className="chess-div">
                         <ReactChess pieces={this.state.pieces} onMovePiece={this.handleMovePiece} allowMoves={this.state.allowMoves}/>
                         <br/>
+                        <div className='chess-info-div'>
+                            <h3>
+                                This Chess Engine is written in Python by myself. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️
+                            </h3>
+                        </div>
                     </div>
-                    <div className='chess-info-div'>
-                    <h3>
-                        This Chess Engine is written in Python by myself. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️
-                    </h3>
-                    </div>
+                    {/*<div className='chess-info-div'>*/}
+                    {/*<h3>*/}
+                        {/*This Chess Engine is written in Python by myself. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️*/}
+                    {/*</h3>*/}
+                    {/*</div>*/}
                     <div className='chess-space-div'>
 
                     </div>
