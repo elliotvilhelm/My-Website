@@ -9,6 +9,7 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import { Link } from 'react-router-dom'
 import resume from '../images/resume.svg'
+import Button from 'material-ui/FlatButton'
 
 import Chess from 'react-chess';
 
@@ -18,9 +19,26 @@ const style = {
 };
 
 class SideBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {open: true};
+        this.toggleDrawer = this.toggleDrawer.bind(this);
+    }
+
+    toggleDrawer(op)  {
+        // this.setState({ open: op });
+    }
     render() {
         return (
-            <Drawer containerClassName='left-drawer' docked={false} zDepth={2}>
+            <div>
+                <h1>HELLO!!!</h1>
+                <Button onClick={this.toggleDrawer} zDepth={3} className='button-s'>
+                    <h1>Open Left</h1>
+                </Button>
+            <Drawer open={this.state.open}
+                    // onClose={this.toggleDrawer(false)}
+                    containerClassName='left-drawer'
+                    zDepth={2}>
                 <MenuItem className='menu-item'>
                     <Link to={"Home"}>
                         <img src={home} className='img-right'/>
@@ -43,6 +61,7 @@ class SideBar extends Component {
                     </Link>
                 </MenuItem>
             </Drawer>
+            </div>
         );
     }
 }

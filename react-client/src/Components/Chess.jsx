@@ -23,6 +23,7 @@ class Chess extends Component {
         this.handleToggle = this.handleToggle.bind(this);
         this.handleClose = this.handleClose.bind(this);
 
+        this.getSquare = this.getSquare.bind(this);
         // this.renderChess = this.renderChess.bind(this);
 
     }
@@ -63,13 +64,7 @@ class Chess extends Component {
                             </h3>
                         </div>
                     </div>
-                    {/*<div className='chess-info-div'>*/}
-                    {/*<h3>*/}
-                        {/*This Chess Engine is written in Python by myself. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️*/}
-                    {/*</h3>*/}
-                    {/*</div>*/}
                     <div className='chess-space-div'>
-
                     </div>
                 </Paper>
             </div>
@@ -86,11 +81,19 @@ class Chess extends Component {
         }
         return "not found"
     }
+
+    getSquare(piece) {
+        for (let p of this.state.pieces) {
+            if (p.split('@')[0] === piece) {
+                return p.split('@')[1]
+            }
+        }
+        return "not found"
+    }
     handleMovePiece(piece, fromSquare, toSquare) {
-        console.log(this.state.castlePerms)
+
         var result = "empty";
         this.setState({allowMoves: false});
-
 
         axios.get(`/validate_move`, {
             params: {
@@ -117,11 +120,12 @@ class Chess extends Component {
                     })
                     .filter(Boolean);
 
+                console.log(this.state.pieces);
+                fromSquare = this.getSquare('K');
                 var oldPerms = this.state.castlePerms;
                 if (result === true && fromSquare === 'e1' && toSquare === 'g1') {
                     var rook_index = newPieces.indexOf("R@h1")
                     var rookTosq = 'f1';
-                    console.log(newPieces)
                     newPieces = newPieces
                         .map((curr, index) => {
                             if (rook_index === index) {
@@ -233,6 +237,7 @@ class Chess extends Component {
                 var move_piece = this.getPiece(moves[0])
                 var move_piece_index = move_piece[1]
                 var move_piece_name = move_piece[0]
+                var fromSquare = moves[0]
                 var toSquare = moves[1];
                 var newPieces = this.state.pieces
                     .map((curr, index) => {
@@ -255,7 +260,7 @@ class Chess extends Component {
                         return curr
                     })
                     .filter(Boolean);
-                if (from_sq === 'e7' && to_sq === 'g7') {
+                if (fromSquare === 'e7' && toSquare === 'g7'  && move_piece[0] === 'k') {
                     var rook_index = newPieces.indexOf("r@h7")
                     var rookTosq = 'f7';
                     console.log(newPieces)
@@ -275,7 +280,7 @@ class Chess extends Component {
                     this.setState({castlePerms: oldPerms})
                 }
 
-                else if (from_sq === 'e7' && to_sq === 'c7') {
+                else if (fromSquare === 'e7' && toSquare === 'c7' && move_piece[0] === 'k') {
                     var rook_index = newPieces.indexOf("r@a7")
                     var rookTosq = 'd7';
                     newPieces = newPieces
