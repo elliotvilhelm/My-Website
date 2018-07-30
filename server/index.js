@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 8080;
 const path = require('path');
 const app = express();
+const pg = require('pg');
+const config = require('../config.js');
 
 var PythonShell = require('python-shell');
 
@@ -20,6 +22,32 @@ app.get('/Resume', (req, res) => {
     res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
 });
 
+app.get('/GetComments', (req, res) => {
+    pgClient.query("TABLE comments").then(result => {
+            res.json(result.rows)
+        }
+    );
+});
+
+app.post('/PostComment', function (req, res, next) {
+    const user = req.body
+    pg.connect(conString, function (err, client, done) {
+        if (err) {
+            // pass the error to the express error handler
+            return next(err)
+        }
+        client.query('INSERT INTO Comments (name, age) VALUES ($1, $2);', [user.name, user.age], function (err, result) {
+            done() //this done callback signals the pg driver that the connection can be closed or returned to the connection pool
+
+            if (err) {
+                // pass the error to the express error handler
+                return next(err)
+            }
+
+            res.send(200)
+        })
+    })
+})
 
 app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/../react-client/dist`));
@@ -71,13 +99,19 @@ app.get('/validate_move', (req, res) => {
             }
         });
 
-        }
-        catch (err) {
+    }
+    catch (err) {
         console.log("had an error ... ooooops")
     }
 });
 
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}!`);
-});
+db = config.database;
+var pgClient = new pg.Client(db);
+pgClient.connect().then()
+{
+    console.log('DB Connected')
+    app.listen(PORT, () => {
+        console.log(`listening on port ${PORT}!`);
+    });
+}
