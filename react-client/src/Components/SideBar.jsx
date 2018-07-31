@@ -31,9 +31,9 @@ class SideBar extends Component {
     render() {
         return (
             <div>
-                <Button onClick={this.toggleDrawer} zDepth={3} className='button-s'>
-                    <h1>Open Left</h1>
-                </Button>
+                {/*<Button onClick={this.toggleDrawer} zDepth={3} className='button-s'>*/}
+                    {/*<h1>Open Left</h1>*/}
+                {/*</Button>*/}
             <Drawer open={this.state.open}
                     // onClose={this.toggleDrawer(false)}
                     containerClassName='left-drawer'
