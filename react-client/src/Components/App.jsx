@@ -12,6 +12,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import Chess from './Chess'
 import history from '../history'
+import Chat from './Chat'
 
 class App extends Component {
     render() {
@@ -27,6 +28,7 @@ class App extends Component {
                         <Route path="/About" component={About}/>
                         <Route path="/Chess" component={Chess}/>
                         <Route path="/Resume" component={Resume}/>
+                        <Route path="/Chat" component={Chat}/>
                     </Switch>
                 </BrowserRouter>
                 {/*<Footer />*/}

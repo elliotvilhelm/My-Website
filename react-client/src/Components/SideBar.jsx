@@ -10,8 +10,8 @@ import MenuItem from 'material-ui/MenuItem';
 import { Link } from 'react-router-dom'
 import resume from '../images/resume.svg'
 import Button from 'material-ui/FlatButton'
-
 import Chess from 'react-chess';
+import chat from '../images/chat.svg'
 
 const style = {
     display: 'inline-block',
@@ -31,7 +31,6 @@ class SideBar extends Component {
     render() {
         return (
             <div>
-                <h1>HELLO!!!</h1>
                 <Button onClick={this.toggleDrawer} zDepth={3} className='button-s'>
                     <h1>Open Left</h1>
                 </Button>
@@ -58,6 +57,11 @@ class SideBar extends Component {
                 <MenuItem className='menu-item'>
                     <Link to={"Resume"}>
                         <img src={resume} className='img-right'/>
+                    </Link>
+                </MenuItem>
+                <MenuItem className='menu-item'>
+                    <Link to={"Chat"}>
+                        <img src={chat} className='img-right'/>
                     </Link>
                 </MenuItem>
             </Drawer>

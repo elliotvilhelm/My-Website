@@ -18,7 +18,6 @@ class HomePage extends Component {
 
             <div>
                 <SideBar/>
-
                 <Paper className='paper'>
                     <div className='name-div'>
                     <h1>Elliot Vilhelm Pourmand</h1>

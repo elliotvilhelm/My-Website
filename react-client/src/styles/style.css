@@ -85,6 +85,11 @@
     max-width: 20%;
     border-radius: 50%;
 }
+.img-postgres {
+    background: transparent;
+    max-height: 50%;
+    max-width: 50%;
+}
 .img-icon {
     max-height: 100%;
     max-width: 100%;
@@ -138,6 +143,27 @@
     /*z-index: 999;*/
 }
 
+.chat-div {
+    max-width: 50%;
+    max-height: 50%;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 10px;
+    background-color: #6b6bb8;
+    /*z-index: 999;*/
+}
+.chat-info-div {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    max-width: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+}
 .chess-info-div {
     position: relative;
     margin: auto;
@@ -263,9 +289,10 @@ p { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; lin
 
 
 table {
+    table-layout: fixed;
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 60%;
+    width: 100%;
 }
 
 td, th {
