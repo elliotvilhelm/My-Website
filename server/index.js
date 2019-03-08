@@ -22,22 +22,19 @@ app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/../react-client/dist`));
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/Home', (req, res) => {
-    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
-});
-app.get('/About', (req, res) => {
-    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
-});
-app.get('/Chess', (req, res) => {
-    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
-});
-app.get('/Resume', (req, res) => {
-    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
-});
-
-app.get('/Chat', (req, res) => {
-    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
-});
+// app.get('/About', (req, res) => {
+//     res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+// });
+// app.get('/Chess', (req, res) => {
+//     res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+// });
+// app.get('/Resume', (req, res) => {
+//     res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+// });
+//
+// app.get('/Chat', (req, res) => {
+//     res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+// });
 
 app.get('/GetComments', (req, res) => {
     pgClient.query("TABLE comments").then(result => {
@@ -115,3 +112,6 @@ app.get('/validate_move', (req, res) => {
 });
 
 
+app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+});

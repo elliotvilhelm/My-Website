@@ -13,6 +13,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import Chess from './Chess'
 import history from '../history'
 import Chat from './Chat'
+import Stuff from './Stuff'
+import Haskell from "./Haskell";
 
 class App extends Component {
     render() {
@@ -29,6 +31,8 @@ class App extends Component {
                         <Route path="/Chess" component={Chess}/>
                         <Route path="/Resume" component={Resume}/>
                         <Route path="/Chat" component={Chat}/>
+                        <Route path="/Stuff" component={Stuff}/>
+                        <Route path="/Haskell" component={Haskell}/>
                     </Switch>
                 </BrowserRouter>
                 {/*<Footer />*/}

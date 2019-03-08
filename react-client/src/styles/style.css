@@ -113,6 +113,35 @@
     margin: auto;
 
 }
+.stuff-div {
+    max-width: 50%;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    background-color: gray;
+}
+
+.haskell-div {
+    max-width: 65%;
+    text-align: left;
+    margin: auto;
+    padding: 20px;
+    background-color: gray;
+}
+.haskell2-div {
+    max-width: 65%;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    background-color: gray;
+}
+.inline-div {
+    width: 40%;
+    display: inline-block;
+    text-align: left;
+    margin: auto;
+    padding: 10px;
+}
 .name-div {
     max-width: 100%;
     max-height: 20%;

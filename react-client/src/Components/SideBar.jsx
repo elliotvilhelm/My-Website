@@ -12,6 +12,9 @@ import resume from '../images/resume.svg'
 import Button from 'material-ui/FlatButton'
 import Chess from 'react-chess';
 import chat from '../images/chat.svg'
+import thoughts from '../images/thoughts.svg'
+import f from '../images/function.svg'
+
 
 const style = {
     display: 'inline-block',
@@ -44,7 +47,6 @@ class SideBar extends Component {
                     </Link>
                 </MenuItem>
                 <MenuItem className='menu-item'>
-
                     <Link to={"About"}>
                         <Img src={profile} className="img-right"/>
                     </Link>
@@ -57,6 +59,16 @@ class SideBar extends Component {
                 <MenuItem className='menu-item'>
                     <Link to={"Resume"}>
                         <img src={resume} className='img-right'/>
+                    </Link>
+                </MenuItem>
+                <MenuItem className='menu-item'>
+                    <Link to={"Haskell"}>
+                        <img src={f} className='img-right'/>
+                    </Link>
+                </MenuItem>
+                <MenuItem className='menu-item'>
+                    <Link to={"Stuff"}>
+                        <img src={thoughts} className='img-right'/>
                     </Link>
                 </MenuItem>
                 <MenuItem className='menu-item'>

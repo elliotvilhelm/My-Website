@@ -20,10 +20,10 @@ class About extends Component {
                     <div className='about-div'>
                         <img src={selfie} className='img-selfie'/>
                         <div>
-                            <h1>💻 Software Engineer</h1>
+                            <br/>
                             <h2>University of California San Diego</h2>
                             <br/>
-                            <h2>Zendesk</h2>
+                            <h2>💻 B. S. Computer Science</h2>
                             <br/>
                             <h3>Los Angeles ✈️  San Francisco ✈️ San Diego</h3>
                         </div>
