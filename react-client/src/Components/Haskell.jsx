@@ -25,7 +25,7 @@ class Haskell extends Component {
                             <h3>Generating Images with Haskell</h3>
                             <h4>Introduction</h4>
                             In this post we explore the generation of images using an expression generator and evaluator
-                            written with Haskell. The program for this post was part of CSE 130 at UCSD thus the code will
+                            written with Haskell. The program for this post was part of CSE 130 at UCSD meaning the code will
                             not be open sourced.
                             <h4>Implementation Details</h4>
                             Let's keep this short.<br/>
@@ -49,6 +49,14 @@ class Haskell extends Component {
                             of the expression evaluation for a given (x, y) is translated into a pixel intensity. This is repeated 3 times
                             to map all three channels for RGB images.
                             <br/>
+                            We make a call to:
+                            <br/>
+                            >>> emitRandomColor image_size (depth, seed)
+                            <br/>The first parameter "image_size" sets the size of the image to be generated. The next parameter "depth" sets depth of the
+                            expression generation. The larger this number the more complicated the expression which is generated will be. The program also takes
+                            exponentially longer time to generate images. The final parameter "seed" is used to initialize the random number generator. If you are not
+                            familiar with seeding random number generators just know the value you choose to input as the seed will have a "random" effect on the image
+                            that is generated. This can make use of the application quite fun as the search for the coolest seed is on!
                         </div>
                         <div style={{height: '50px'}}/>
                         <div className="haskell-div">
