@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography'
 import Fade from '@material-ui/core/Fade';
 import Chess from "./Chess";
 import { Link } from 'react-router-dom'
+import StickyFooter from 'react-sticky-footer';
 
 
 
@@ -99,6 +100,17 @@ class HomePage extends Component {
 
                     </div>
                 </Fade>
+                <StickyFooter
+                    bottomThreshold={50}
+                    normalStyles={{
+                        backgroundColor: "#A9A9A9",
+                    }}
+                    stickyStyles={{
+                        backgroundColor: "#A9A9A9",
+                    }}
+                >
+                    COPYRIGHT © 2019 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
+                </StickyFooter>
             </Paper>
 
         )

@@ -7,6 +7,7 @@ import '../styles/style.css'
 import terminator from '../images/terminator.png'
 import Fade from '@material-ui/core/Fade';
 
+import StickyFooter from 'react-sticky-footer';
 
 
 class Chess extends Component {
@@ -71,6 +72,20 @@ class Chess extends Component {
                         </div>
                         <div className='chess-space-div'>
                         </div>
+                    <StickyFooter
+                        bottomThreshold={50}
+
+                        normalStyles={{
+
+                            backgroundColor: "#A9A9A9",
+
+                        }}
+                        stickyStyles={{
+                            backgroundColor: "#A9A9A9",
+                        }}
+                    >
+                        COPYRIGHT © 2019 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
+                    </StickyFooter>
                     </div>
                 </Fade>
             </Paper>

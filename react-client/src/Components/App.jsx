@@ -16,6 +16,7 @@ import Chat from './Chat'
 import Stuff from './Stuff'
 import Haskell from "./Haskell";
 
+
 class App extends Component {
     render() {
         return (
@@ -36,6 +37,7 @@ class App extends Component {
                     </Switch>
                 </BrowserRouter>
                 {/*<Footer />*/}
+
             </MuiThemeProvider>
         );
     }

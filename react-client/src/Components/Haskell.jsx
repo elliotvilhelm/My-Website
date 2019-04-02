@@ -9,6 +9,7 @@ import rgb4 from '../images/CAT125_color_150_6_12.png'
 import rgb5 from '../images/CAT125_color_150_4_222.png'
 import rgb6 from '../images/CAT125_color_150_4_666622.png'
 import Fade from '@material-ui/core/Fade';
+import StickyFooter from 'react-sticky-footer';
 
 const style = {
     display: 'inline-block',
@@ -29,7 +30,7 @@ class Haskell extends Component {
                 <Fade timeout={2000} in={this.state.mounted}>
                     <div>
                         <SideBar/>
-                        <div style={{"padding-top": '50px'}}>
+                        <div style={{"padding-top": '50px', paddingBottom: '20px'}}>
                             <div className="haskell-div">
                                 <h3>Generating Images with Haskell</h3>
                                 <h4>Introduction</h4>
@@ -161,6 +162,17 @@ class Haskell extends Component {
                                 <div className={{height: '200px'}}/>
                             </div>
                         </div>
+                    <StickyFooter
+                        bottomThreshold={50}
+                        normalStyles={{
+                            backgroundColor: "#A9A9A9",
+                        }}
+                        stickyStyles={{
+                            backgroundColor: "#A9A9A9",
+                        }}
+                    >
+                        COPYRIGHT © 2019 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
+                    </StickyFooter>
                     </div>
                 </Fade>
             </Paper>
