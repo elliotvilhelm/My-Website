@@ -11,9 +11,8 @@ const style = {
 class Stuff extends Component {
     render() {
         return (
-            <div>
-                <SideBar/>
                 <Paper className='paper'>
+                    <SideBar/>
                     <div style={{"padding-top": '200px'}}>
                     <div className="stuff-div">
                     <h3>Page under construction, enjoy these links</h3>
@@ -31,7 +30,6 @@ class Stuff extends Component {
                     </div>
                     </div>
                 </Paper>
-            </div>
         )
     }
 }

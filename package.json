@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@kyso/react-jupyter": "^0.6.0",
+    "@material-ui/core": "^3.9.3",
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

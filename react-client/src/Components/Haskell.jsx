@@ -17,9 +17,8 @@ const style = {
 class Haskell extends Component {
     render() {
         return (
-            <div>
-                <SideBar/>
                 <Paper className='paper'>
+                    <SideBar/>
                     <div style={{"padding-top": '50px'}}>
                         <div className="haskell-div">
                             <h3>Generating Images with Haskell</h3>
@@ -153,7 +152,6 @@ class Haskell extends Component {
                         </div>
                     </div>
                 </Paper>
-            </div>
         )
     }
 }

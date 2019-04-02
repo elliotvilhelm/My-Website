@@ -45,9 +45,8 @@ class Chess extends Component {
     }
     render() {
         return (
-            <div>
-                <SideBar/>
                 <Paper className='paper'>
+                    <SideBar/>
                     <div className='banner-div'>
                         <img src={terminator} className='img-terminator'/>
                     </div>
@@ -60,14 +59,13 @@ class Chess extends Component {
                         <br/>
                         <div className='chess-info-div'>
                             <h3>
-                                This Chess Engine is written in Python by myself. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️
+                                This Chess Engine is written in Python3. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️
                             </h3>
                         </div>
                     </div>
                     <div className='chess-space-div'>
                     </div>
                 </Paper>
-            </div>
         )
     }
 

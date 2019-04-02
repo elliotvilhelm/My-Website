@@ -14,6 +14,8 @@ import Chess from 'react-chess';
 import chat from '../images/chat.svg'
 import thoughts from '../images/thoughts.svg'
 import f from '../images/function.svg'
+import menu from '../images/menu.png'
+import cancel from '../images/error.svg'
 
 
 const style = {
@@ -24,61 +26,73 @@ const style = {
 class SideBar extends Component {
     constructor(props) {
         super(props);
-        this.state = {open: true};
+        this.state = {open: false};
         this.toggleDrawer = this.toggleDrawer.bind(this);
     }
 
-    toggleDrawer(op)  {
-        // this.setState({ open: op });
+    toggleDrawer()  {
+        this.setState({ open: !this.state.open });
     }
     render() {
-        return (
-            <div>
-                {/*<Button onClick={this.toggleDrawer} zDepth={3} className='button-s'>*/}
-                    {/*<h1>Open Left</h1>*/}
-                {/*</Button>*/}
-            <Drawer open={this.state.open}
-                    // onClose={this.toggleDrawer(false)}
-                    containerClassName='left-drawer'
-                    zDepth={2}>
-                <MenuItem className='menu-item'>
-                    <Link to={"Home"}>
-                        <img src={home} className='img-right'/>
-                    </Link>
-                </MenuItem>
-                <MenuItem className='menu-item'>
-                    <Link to={"About"}>
-                        <Img src={profile} className="img-right"/>
-                    </Link>
-                </MenuItem>
-                <MenuItem className='menu-item'>
-                    <Link to={"Chess"}>
-                        <img src={chess} className='img-right'/>
-                    </Link>
-                </MenuItem>
-                <MenuItem className='menu-item'>
-                    <Link to={"Resume"}>
-                        <img src={resume} className='img-right'/>
-                    </Link>
-                </MenuItem>
-                <MenuItem className='menu-item'>
-                    <Link to={"Haskell"}>
-                        <img src={f} className='img-right'/>
-                    </Link>
-                </MenuItem>
-                <MenuItem className='menu-item'>
-                    <Link to={"Stuff"}>
-                        <img src={thoughts} className='img-right'/>
-                    </Link>
-                </MenuItem>
-                <MenuItem className='menu-item'>
-                    <Link to={"Chat"}>
-                        <img src={chat} className='img-right'/>
-                    </Link>
-                </MenuItem>
-            </Drawer>
-            </div>
-        );
+        if (this.state.open) {
+            return (
+                <div>
+                    <Drawer open={this.state.open}
+                            onClose={() => this.setState({open: false})}
+                            onOpen={() => this.setState({open: true})}
+                            containerClassName='left-drawer'
+                            zDepth={2}>
+                        {/*<MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>*/}
+                            {/*<Link to={"Home"}>*/}
+                                {/*<img src={home} className='img-right'/>*/}
+                            {/*</Link>*/}
+                        {/*</MenuItem>*/}
+                        <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
+                            <Link to={"Home"}>
+                                <Img src={profile} className="img-right"/>
+                            </Link>
+                        </MenuItem>
+                        <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
+                            <Link to={"Chess"}>
+                                <img src={chess} className='img-right'/>
+                            </Link>
+                        </MenuItem>
+                        <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
+                            <Link to={"Resume"}>
+                                <img src={resume} className='img-right'/>
+                            </Link>
+                        </MenuItem>
+                        <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
+                            <Link to={"Haskell"}>
+                                <img src={f} className='img-right'/>
+                            </Link>
+                        </MenuItem>
+                        <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
+                            <Link to={"Stuff"}>
+                                <img src={thoughts} className='img-right'/>
+                            </Link>
+                        </MenuItem>
+                        <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
+                            <Link to={"Chat"}>
+                                <img src={chat} className='img-right'/>
+                            </Link>
+                        </MenuItem>
+                        <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
+                            <img src={cancel} className='img-right'/>
+                        </MenuItem>
+                    </Drawer>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div className='sidebar-button-div'>
+                    <Button onClick={this.toggleDrawer} zDepth={3} className='button-s'>
+                        <img src={menu} className='img-right'/>
+                    </Button>
+                </div>
+            );
+        }
     }
 }
 

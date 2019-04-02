@@ -18,15 +18,42 @@
     padding: 20px 20px !important;
 }
 .button-s {
-    width: 100%;
-    height: 100%;
-    position: relative !important;
-    background: #FFFFFF !important;
-    z-index: 100 !important;
+    /*width: 100%;*/
+    height: 100% !important;
+    /*min-height: 20%;*/
+    /*height: 500px;*/
+    /*position: relative !important;*/
+    /*background: pink !important;*/
+    /*z-index: 100 !important;*/
+    /*display: table-cell !important;*/
+    /*text-align: center !important;*/
+    /*margin: auto !important;*/
+}
+.sidebar-button-div {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 5%;
+    max-width: 5%;
+    /*z-index: 19999;*/
+    /*width: 10%;*/
+    /*height: 10% !important;*/
+    /*text-align: center !important;*/
+    /*min-height: 20% !important;*/
+    z-index: 1000000 !important;
+    padding: 1% !important;
+    /*display: table-cell !important;*/
+
+    /*margin: auto;*/
+    /*background: pink !important;*/
+    /*background-size: cover !important;*/
+    /*overflow-y: auto;*/
+    /*text-align: center;*/
+
 }
 .resume-div {
     margin: auto;
-    padding-top: 30px;
     height: 95%;
     width: 50%;
     bottom: 0;
@@ -34,6 +61,7 @@
     position: relative;
     max-width: 60%;
     max-height: 100%;
+    /*background-color: pink;*/
 }
 .background {
     top: 0;
@@ -48,10 +76,19 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 10;
+    padding: 3% !important;
     background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("../images/background.jpg") !important;
     background-size: cover !important;
     overflow-y: auto;
+    text-align: center;
+}
+.about-paper {
+    display: inline-block;
+    background: dimgrey !important;
+    width: 65% !important;
+    height: 80% !important;
+    text-align: center !important;
 }
 .left-drawer {
     top: 0px !important;
@@ -81,9 +118,9 @@
 }
 .img-selfie {
     background: transparent;
-    max-height: 20%;
-    max-width: 20%;
-    border-radius: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    /*border-radius: 80%;*/
 }
 .img-postgres {
     background: transparent;
@@ -94,6 +131,12 @@
     max-height: 100%;
     max-width: 100%;
 }
+.div-home-git {
+    max-height: 20%;
+    max-width: 20%;
+    float: right;
+    background-color: pink;
+}
 .banner-div {
     max-width: 100%;
     max-height: 40%;
@@ -103,14 +146,36 @@
     /*z-index: 1;*/
 
 }
-.about-div {
+.about-hold-div {
     max-width: 100%;
-    max-height: 20%;
-    position: fixed;
-    top: 25%;
-    right: 0;
+    max-height: 100%;
+    /*top: 25%;*/
+    padding: 3%;
+    /*right: 0;*/
     text-align: center;
     margin: auto;
+    /*background-color: pink;*/
+
+}
+.selfie-div {
+    max-width: 44%;
+    max-height: 100%;
+    background-color: rebeccapurple;
+    float: left;
+    text-align: right;
+    /*padding: 2%;*/
+}
+.about-div {
+    max-width: 55%;
+    max-height: 100%;
+    /*padding: 2%;*/
+    /*position: fixed;*/
+    /*top: 25%;*/
+    /*right: 0;*/
+    text-align: left;
+    /*margin: auto;*/
+    /*background-color: grey;*/
+    float: right;
 
 }
 .stuff-div {
@@ -144,10 +209,11 @@
 }
 .name-div {
     max-width: 100%;
-    max-height: 20%;
+    max-height: 30%;
     /*position: fixed;*/
-    padding-top: 20%;
-    top: 30%;
+    /*padding-top: 5%;*/
+    /*padding-bottom: 10%;*/
+    /*top: 30%;*/
     right: 28%;
     text-align: center;
     margin: auto;
@@ -168,7 +234,8 @@
     height: 40%;
     width: 40%;
     margin: auto;
-    padding-bottom: 10px;
+    /*padding-bottom: 100px;*/
+    padding-bottom: 10%;
     /*z-index: 999;*/
 }
 
@@ -200,24 +267,31 @@
     max-width: 100%;
     right: 0;
     top: 0;
-    bottom: 0;
+    /*bottom: 0;*/
     z-index: 1000;
     background: rgba(255, 255, 255, 0.8);
 }
 .chess-space-div {
     margin: auto;
-    height: 100px;
+    height: 200px;
     z-index: 1000;
 }
 .photo-div {
-    display: inline-block;
-    position: fixed;
-    height: 100px;
-    width: 300px;
-    left: 50%;
-    right: 50%;
-    top: 50%;
-    background: transparent;
+    padding-top: 5%;
+    /*display: inline-block;*/
+    /*position: fixed;*/
+    /*height: 100px;*/
+    /*width: 300px;*/
+    /*left: 50%;*/
+    /*right: 50%;*/
+    /*top: 50%;*/
+    /*background: transparent;*/
+    /*float: right;*/
+    /*text-align: center;*/
+    position: relative;
+    margin: auto;
+    max-height: 10%;
+    max-width: 20%;
     /*background: #6b6bb8;*/
 }
 
