@@ -27,11 +27,11 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/Home" component={HomePage} />
-                        <Route path="/About" component={About}/>
+                        {/*<Route path="/About" component={About}/>*/}
                         <Route path="/Chess" component={Chess}/>
                         <Route path="/Resume" component={Resume}/>
-                        <Route path="/Chat" component={Chat}/>
-                        <Route path="/Stuff" component={Stuff}/>
+                        {/*<Route path="/Chat" component={Chat}/>*/}
+                        {/*<Route path="/Stuff" component={Stuff}/>*/}
                         <Route path="/Haskell" component={Haskell}/>
                     </Switch>
                 </BrowserRouter>

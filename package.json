@@ -32,6 +32,7 @@
     "pg": "^7.4.3",
     "python-shell": "^0.5.0",
     "react": "^16.4.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-center": "^1.1.1",
     "react-chess": "^1.1.0",
     "react-dom": "^16.4.1",
@@ -42,7 +43,8 @@
     "react-url": "^1.0.1",
     "sass-loader": "^7.0.3",
     "svg-loader": "0.0.2",
-    "webpack": "^4.15.1"
+    "webpack": "^4.15.1",
+    "react-transition-group": "latest"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",

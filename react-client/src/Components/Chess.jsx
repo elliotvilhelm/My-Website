@@ -5,7 +5,7 @@ import SideBar from './SideBar'
 import Paper from 'material-ui/Paper'
 import '../styles/style.css'
 import terminator from '../images/terminator.png'
-
+import Fade from '@material-ui/core/Fade';
 
 
 
@@ -13,7 +13,7 @@ class Chess extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {open: false, pieces: ReactChess.getDefaultLineup(), allowMoves: true, castlePerms: "0000"};
+        this.state = {open: false, pieces: ReactChess.getDefaultLineup(), allowMoves: true, castlePerms: "0000", mounted: false};
         this.handleMovePiece = this.handleMovePiece.bind(this);
         this.getComputerMove = this.getComputerMove.bind(this);
         this.getPiece = this.getPiece.bind(this);
@@ -27,6 +27,10 @@ class Chess extends Component {
         // this.renderChess = this.renderChess.bind(this);
 
     }
+    componentDidMount() {
+        this.setState({mounted: true})
+    }
+
     preventDragHandler () {
     }
     handleToggle() {
@@ -45,27 +49,31 @@ class Chess extends Component {
     }
     render() {
         return (
-                <Paper className='paper'>
-                    <SideBar/>
-                    <div className='banner-div'>
-                        <img src={terminator} className='img-terminator'/>
-                    </div>
-                    <div className='chess-top-div'>
-                        <h1>Can you beat my Chess Engine?</h1>
-                        <h3>Make a move, the engine will play back.</h3>
-                    </div>
-                    <div className="chess-div">
-                        <ReactChess pieces={this.state.pieces} onMovePiece={this.handleMovePiece} allowMoves={this.state.allowMoves}/>
-                        <br/>
-                        <div className='chess-info-div'>
-                            <h3>
-                                This Chess Engine is written in Python3. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️
-                            </h3>
+            <Paper className='paper'>
+                <Fade timeout={2000} in={this.state.mounted}>
+                    <div>
+                        <SideBar/>
+                        <div className='banner-div'>
+                            <img src={terminator} className='img-terminator'/>
+                        </div>
+                        <div className='chess-top-div'>
+                            <h1>Can you beat my Chess Engine?</h1>
+                            <h3>Make a move, the engine will play back.</h3>
+                        </div>
+                        <div className="chess-div">
+                            <ReactChess pieces={this.state.pieces} onMovePiece={this.handleMovePiece} allowMoves={this.state.allowMoves}/>
+                            <br/>
+                            <div className='chess-info-div'>
+                                <h3>
+                                    This Chess Engine is written in Python3. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️
+                                </h3>
+                            </div>
+                        </div>
+                        <div className='chess-space-div'>
                         </div>
                     </div>
-                    <div className='chess-space-div'>
-                    </div>
-                </Paper>
+                </Fade>
+            </Paper>
         )
     }
 
