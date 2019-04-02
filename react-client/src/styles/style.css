@@ -16,7 +16,9 @@
     /*bottom: 20px !important;*/
     max-width: 100% !important;
     max-height: 80% !important;
-    /*padding: 10%;*/
+    height: 20% !important;
+
+    padding: 10% !important;
     /*padding: 20px 20px !important;*/
 }
 .button-s {
@@ -97,7 +99,7 @@
     /*top: 0px !important;*/
     /*top: 25% !important;*/
     /*vertical-align: center;*/
-    max-height: 50%;
+    /*max-height: 50%;*/
     /*transition-duration: 4000ms;*/
     text-align: left !important;
     width: 8% !important;

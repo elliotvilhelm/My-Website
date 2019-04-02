@@ -35,10 +35,10 @@ class HomePage extends Component {
                         <SideBar/>
                         <div className='name-div'>
 
-                            <Typography variant="h1">
-                            {/*<h1>Elliot Vilhelm Pourmand</h1>*/}
-                            Elliot Vilhelm Pourmand
-                            </Typography>
+                            {/*<Typography variant="h1">*/}
+                            <h1>Elliot Vilhelm Pourmand</h1>
+                            {/*Elliot Vilhelm Pourmand*/}
+                            {/*</Typography>*/}
                         </div>
                         <Paper className='about-paper'>
 
