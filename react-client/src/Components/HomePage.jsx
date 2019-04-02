@@ -36,8 +36,10 @@ class HomePage extends Component {
                         <SideBar/>
                         <div className='name-div'>
 
+                            <Fade timeout={5000} in={this.state.mounted}>
                             {/*<Typography variant="h1">*/}
                             <h1>Elliot Vilhelm Pourmand</h1>
+                            </Fade>
                             {/*Elliot Vilhelm Pourmand*/}
                             {/*</Typography>*/}
                         </div>
