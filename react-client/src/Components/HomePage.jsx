@@ -32,7 +32,7 @@ class HomePage extends Component {
                             <div className='about-div'>
                                 <Paper style={{padding: '1%'}}>
                                     <Typography variant="p">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;I am an Senior undergraduate student at the University of California San Diego.
+                                        &nbsp;&nbsp;&nbsp;&nbsp;I am a Senior undergraduate student at the University of California San Diego.
                                         Some topics that interest me are deep reinforcement learning, algorithmic trading and chess programming.
                                         My undergraduate experience has had great breadth during which I have taken courses on algorithms, advanced
                                         data structures, computer architecture, statistical AI, deep learning, type inference, and operating systems.<br/><br/>
