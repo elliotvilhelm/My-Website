@@ -26,6 +26,8 @@ class Resume extends Component {
                         <div className='resume-div'>
                             <iframe src="https://drive.google.com/file/d/1eKi6yOeRiBpsnnVqOod5qfm-6FsM4-dk/preview" width="800px" height="800px"/>
                         </div>
+                    </div>
+                </Fade>
                 <StickyFooter
                     bottomThreshold={50}
                     normalStyles={{
@@ -37,8 +39,6 @@ class Resume extends Component {
                 >
                     COPYRIGHT © 2019 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
                 </StickyFooter>
-                    </div>
-                </Fade>
             </Paper>
         )
     }

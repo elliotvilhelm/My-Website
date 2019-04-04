@@ -72,22 +72,22 @@ class Chess extends Component {
                         </div>
                         <div className='chess-space-div'>
                         </div>
-                    <StickyFooter
-                        bottomThreshold={50}
-
-                        normalStyles={{
-
-                            backgroundColor: "#A9A9A9",
-
-                        }}
-                        stickyStyles={{
-                            backgroundColor: "#A9A9A9",
-                        }}
-                    >
-                        COPYRIGHT © 2019 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
-                    </StickyFooter>
                     </div>
                 </Fade>
+                <StickyFooter
+                    bottomThreshold={50}
+
+                    normalStyles={{
+
+                        backgroundColor: "#A9A9A9",
+
+                    }}
+                    stickyStyles={{
+                        backgroundColor: "#A9A9A9",
+                    }}
+                >
+                    COPYRIGHT © 2019 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
+                </StickyFooter>
             </Paper>
         )
     }
