@@ -39,7 +39,7 @@
     top: 0;
     left: 0;
     max-height: 8%;
-    max-width: 8%;
+    max-width: 10%;
     /*z-index: 19999;*/
     /*width: 10%;*/
     /*height: 10% !important;*/
@@ -63,9 +63,11 @@
     bottom: 0;
     top: 0;
     /*position: relative;*/
+    /*min-height: 100%;*/
     max-width: 60%;
     max-height: 100%;
-    padding-bottom: 10px;
+    padding: 1%;
+    /*padding-bottom: 10px;*/
     /*background-color: pink;*/
 }
 .background {
@@ -76,20 +78,33 @@
 }
 
 .paper {
-    position: fixed;
-    top: 0;
-    bottom: 0;
+    /*position: fixed;*/
+    position: relative;
+    /*top: 0;*/
+    /*top: 0 !important;*/
+    /*margin: 0 !important;*/
+    /*padding: 0 !important;*/
+    /*bottom: 0;*/
     width: 100%;
-    height: 100%;
-    z-index: 10;
-    padding-top: 1% !important;
-    padding-bottom: 0 !important;
-    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("../images/background.jpg") !important;
-    background-size: cover !important;
+    /*height: 100% !important;*/
+    /*z-index: 10;*/
+    /*padding-top: 1% !important;*/
+    min-height: 100vh !important;
+    /*padding-bottom: 0 !important;*/
+    /*padding-top: 0 !important;*/
+    /*background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("../images/background.jpg") !important;*/
+    /*background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)) !important;*/
+    /*background-size: cover !important;*/
     overflow-y: auto;
     text-align: center;
-
 }
+.sticky-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*height: 2.5rem;*/
+}
+
 .about-paper {
     display: inline-block;
     background: dimgrey !important;
@@ -104,7 +119,7 @@
     /*max-height: 50%;*/
     /*transition-duration: 4000ms;*/
     text-align: left !important;
-    width: 8% !important;
+    width: 10% !important;
     transform: translate(0%, 0px) !important;
     background: transparent !important;
 }
@@ -130,8 +145,8 @@
 }
 .img-selfie {
     background: transparent;
-    max-height: 90%;
-    max-width: 90%;
+    max-height: 80%;
+    max-width: 80%;
     float: left;
     padding: 3% 3% 0;
     border-radius: 80%;
@@ -142,8 +157,8 @@
     max-width: 50%;
 }
 .img-icon {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 80%;
+    max-width: 80%;
 }
 .div-home-git {
     max-height: 20%;
@@ -187,7 +202,7 @@
     max-height: 90%;
     display: inline-block;
     border: 2px solid white;
-    /*padding: 2%;*/
+    padding: 2%;
     /*position: fixed;*/
     /*top: 25%;*/
     /*right: 0;*/
@@ -195,7 +210,7 @@
     /*opacity: 1 !important;*/
     text-align: left;
     /*margin: auto;*/
-    /*background-color: grey;*/
+    background-color: darkgrey;
     /*float: right;*/
 
 }
@@ -232,6 +247,7 @@
     max-width: 100%;
     max-height: 30%;
     /*position: fixed;*/
+    /*position: absolute;*/
     /*padding-top: 5%;*/
     padding-bottom: 1%;
     /*top: 30%;*/

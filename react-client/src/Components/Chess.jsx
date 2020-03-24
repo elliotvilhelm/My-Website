@@ -74,20 +74,9 @@ class Chess extends Component {
                         </div>
                     </div>
                 </Fade>
-                <StickyFooter
-                    bottomThreshold={50}
-
-                    normalStyles={{
-
-                        backgroundColor: "#A9A9A9",
-
-                    }}
-                    stickyStyles={{
-                        backgroundColor: "#A9A9A9",
-                    }}
-                >
-                    COPYRIGHT © 2019 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
-                </StickyFooter>
+                <footer className='sticky-footer'>
+                    COPYRIGHT © 2020 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
+                </footer>
             </Paper>
         )
     }

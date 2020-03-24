@@ -11,8 +11,6 @@ import { Link } from 'react-router-dom'
 import resume from '../images/resume.svg'
 import Button from 'material-ui/FlatButton'
 import Chess from 'react-chess';
-import chat from '../images/chat.svg'
-import thoughts from '../images/thoughts.svg'
 import f from '../images/function.svg'
 import menu from '../images/menu.png'
 import cancel from '../images/error.svg'

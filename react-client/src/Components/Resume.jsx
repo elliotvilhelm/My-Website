@@ -24,21 +24,13 @@ class Resume extends Component {
                     <div>
                         <SideBar/>
                         <div className='resume-div'>
-                            <iframe src="https://drive.google.com/file/d/1eKi6yOeRiBpsnnVqOod5qfm-6FsM4-dk/preview" width="800px" height="800px"/>
+                            <iframe src="https://drive.google.com/file/d/1eKi6yOeRiBpsnnVqOod5qfm-6FsM4-dk/preview" width="800px" height="950px"/>
                         </div>
                     </div>
                 </Fade>
-                <StickyFooter
-                    bottomThreshold={50}
-                    normalStyles={{
-                        backgroundColor: "#A9A9A9",
-                    }}
-                    stickyStyles={{
-                        backgroundColor: "#A9A9A9",
-                    }}
-                >
-                    COPYRIGHT © 2019 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
-                </StickyFooter>
+                <footer className='sticky-footer'>
+                    COPYRIGHT © 2020 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
+                </footer>
             </Paper>
         )
     }
