@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 // import { browserHistory } from 'react-router';
 import HomePage from './HomePage';
 import NavBar from './HeaderComponent/NavBar';
-import Footer from './FooterComponent/Footer';
 import About from './About';
 import Resume from './Resume'
 import '../styles/style.css'
@@ -36,7 +35,6 @@ class App extends Component {
                         <Route path="/Haskell" component={Haskell}/>
                     </Switch>
                 </BrowserRouter>
-                {/*<Footer />*/}
 
             </MuiThemeProvider>
         );

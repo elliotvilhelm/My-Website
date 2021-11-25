@@ -7,4 +7,6 @@ bundle.js
 # Dependency directories
 node_modules/
 
+IZII/__pycache__
+
 .DS_Store

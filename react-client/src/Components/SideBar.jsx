@@ -54,13 +54,13 @@ class SideBar extends Component {
                             </Link>
                         </MenuItem>
                         <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
-                            <Link to={"Chess"}>
-                                <img src={chess} className='img-right'/>
+                            <Link to={"Resume"}>
+                                <img src={resume} className='img-right'/>
                             </Link>
                         </MenuItem>
                         <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>
-                            <Link to={"Resume"}>
-                                <img src={resume} className='img-right'/>
+                            <Link to={"Chess"}>
+                                <img src={chess} className='img-right'/>
                             </Link>
                         </MenuItem>
                         <MenuItem className='menu-item' onClick={() => this.toggleDrawer(false)}>

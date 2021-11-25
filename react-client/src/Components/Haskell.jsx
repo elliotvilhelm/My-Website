@@ -164,9 +164,6 @@ class Haskell extends Component {
                         </div>
                     </div>
                 </Fade>
-                <footer className='sticky-footer'>
-                    COPYRIGHT © 2020 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
-                </footer>
             </Paper>
         )
     }

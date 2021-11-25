@@ -7,7 +7,6 @@ import '../styles/style.css'
 import terminator from '../images/terminator.png'
 import Fade from '@material-ui/core/Fade';
 
-import StickyFooter from 'react-sticky-footer';
 
 
 class Chess extends Component {
@@ -66,7 +65,7 @@ class Chess extends Component {
                             <br/>
                             <div className='chess-info-div'>
                                 <h3>
-                                    This Chess Engine is written in Python3. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a> ❤️
+                                    Chess Engine is written in Python. Code can be found on my <a href="https://github.com/ElliotVilhelm/IZII"> Github</a>
                                 </h3>
                             </div>
                         </div>
@@ -74,9 +73,6 @@ class Chess extends Component {
                         </div>
                     </div>
                 </Fade>
-                <footer className='sticky-footer'>
-                    COPYRIGHT © 2020 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
-                </footer>
             </Paper>
         )
     }

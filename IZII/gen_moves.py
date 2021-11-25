@@ -442,23 +442,23 @@ def gen_pseudo_moves_v3(state):
             continue
 
         # PAWNS
-        if piece_at_index is 'P':
+        if piece_at_index == 'P':
             moves += get_white_pawn_moves2(b, state[EN_PAS_INDEX], sq_index)
             continue
-        elif piece_at_index is 'p':
+        elif piece_at_index == 'p':
             moves += get_black_pawn_moves2(b, state[EN_PAS_INDEX], sq_index)
             continue
 
-        elif piece_at_index is 'n':
+        elif piece_at_index == 'n':
             moves += get_black_knight_moves2(b, sq_index)
             continue
-        elif piece_at_index is 'N':
+        elif piece_at_index == 'N':
             moves += get_white_knight_moves2(b, sq_index)
             continue
-        elif piece_at_index is 'K':
+        elif piece_at_index == 'K':
             moves += get_white_king_moves2(b, sq_index)
             continue
-        elif piece_at_index is 'k':
+        elif piece_at_index == 'k':
             moves += get_black_king_moves2(b, sq_index)
             continue
         else:

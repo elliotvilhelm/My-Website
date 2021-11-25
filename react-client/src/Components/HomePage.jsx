@@ -34,24 +34,8 @@ class HomePage extends Component {
 
                                 <div className='about-hold-div'>
                                     <div className='about-div'>
-                                        {/*<Paper style={{padding: '1%'}}>*/}
-                                            <div className='selfie-div'>
-                                                <img src={selfie} className='img-selfie'/>
-                                            </div>
-                                            <Typography style={{fontSize: 20}} variant="p">
-                                                &nbsp;&nbsp;&nbsp;&nbsp;Welcome! I am a Software Engineer working at Zendesk in San Francisco, California.
-                                                I completed my undergraduate degree at the University of California San Diego, where I
-                                                earned a Bachelor of Science in Computer Science. My interests are focused in the areas of
-                                                near real-time streaming and Deep Learning. At Zendesk I work on the Abuse and Fraud Prevention team where
-                                                we enable teams across the organization to effectively combat abuse.<br/><br/>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;My work at Zendesk focuses on data streaming with Apache Flink and Deep Learning
-                                                with TensorFlow. My recent work has focused on developing a machine learning pipeline. The pipeline consists of a
-                                                near real-streaming application which makes requests to a model server using Apache Flink's Async I/O.
-                                                Our model server is built on Tensorflow Extended Serving and server language models which utilize pre-trained
-                                                embeddings from TensorFlow Hub.
-
-                                            </Typography>
-                                        {/*</Paper>*/}
+                                        ✉️: elliot@pourmand.com<br/>
+                                        🔗: <a href="https://www.linkedin.com/in/elliot-pourmand">linkedin.com/in/elliot-pourmand</a>
                                     </div>
                                 </div>
                             </Paper>
@@ -66,9 +50,6 @@ class HomePage extends Component {
 
                         </div>
                     </Fade>
-                    <footer className='sticky-footer'>
-                        COPYRIGHT © 2020 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
-                    </footer>
                 </Paper>
         )
     }

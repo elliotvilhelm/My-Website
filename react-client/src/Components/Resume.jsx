@@ -24,13 +24,10 @@ class Resume extends Component {
                     <div>
                         <SideBar/>
                         <div className='resume-div'>
-                            <iframe src="https://drive.google.com/file/d/1eKi6yOeRiBpsnnVqOod5qfm-6FsM4-dk/preview" width="800px" height="950px"/>
+                            <iframe src="https://docs.google.com/document/d/1STt3vLs14Di6Xmoy4tgI9LQKejoaaM7wLmzGZU697pw/preview" width="800px" height="950px"/>
                         </div>
                     </div>
                 </Fade>
-                <footer className='sticky-footer'>
-                    COPYRIGHT © 2020 ELLIOT VILHELM POURMAND. ALL RIGHTS RESERVED
-                </footer>
             </Paper>
         )
     }
