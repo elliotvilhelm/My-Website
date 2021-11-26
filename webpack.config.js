@@ -15,11 +15,15 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(png|otf)$/,
-                loader: 'url-loader?limit=100000&minetype=image/png'
+                loader: 'url-loader',
+                options: {
+                    limit: 100000,
+                    minetype: 'image/png'
+                }
             },
             {
 
@@ -30,10 +34,10 @@ module.exports = {
                 test: [/\.jsx?/, /\.es6/],
                 include: SRC_DIR,
                 loader: 'babel-loader',
-                query: {
+                options: {
                     presets: ['react', 'es2015']
                 }
-            }
+}
         ],
 
     },
