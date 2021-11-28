@@ -18,7 +18,7 @@ class HomePage extends Component {
                     <p>
                     ✉️ <a href = "mailto: elliot@pourmand.com">elliot@pourmand.com</a>
                     <br/>
-                    🔗 <a href="https://www.github.com/in/elliotvilhelm">github.com/elliotvilhelm</a>
+                    🔗 <a href="https://www.github.com/elliotvilhelm">github.com/elliotvilhelm</a>
                     <br/>
                     🔗 <a href="https://www.linkedin.com/in/elliot-pourmand">linkedin.com/in/elliot-pourmand</a>
                     <br/>
