@@ -3,6 +3,7 @@ const SRC_DIR = path.join(__dirname, '/react-client/src');
 const DIST_DIR = path.join(__dirname, '/react-client/dist');
 const webpack = require('webpack');
 module.exports = {
+    mode: 'development',
     entry: `${SRC_DIR}/index.jsx`,
     output: {
         path: DIST_DIR,
@@ -14,9 +15,17 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
+                test: /\.css$/i,
+                use: [
+                  'style-loader',
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      modules: false,
+                    },
+                  },
+                ],
+              },
             {
                 test: /\.(png|otf)$/,
                 loader: 'url-loader',
@@ -32,18 +41,22 @@ module.exports = {
             },
             {
                 test: [/\.jsx?/, /\.es6/],
-                include: SRC_DIR,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['react', 'es2015']
+                exclude: /node_modules/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: [
+                      ['@babel/preset-react', { targets: "defaults" }]
+                    ]
+                  }
                 }
-}
+            }
         ],
 
     },
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env.NODE_ENV': JSON.stringify('development')
         })
     ],
 };
