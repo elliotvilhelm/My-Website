@@ -1,0 +1,17 @@
+.background {
+    height: 100vh;
+    background-color: turquoise;
+}
+
+.home {
+    height: 100vh;
+    background-color: turquoise;
+    text-align: center;
+    padding: 10%;
+}
+
+.haskell-div {
+    padding: 10%;
+    height: 100vh;
+    background-color: coral;
+}
