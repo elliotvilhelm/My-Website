@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import '../style.css'
+import Pdf from '../assets/pdf/Elliot_Pourmand_11-25-2021.pdf'
+
 
 
 class HomePage extends Component {
@@ -21,6 +23,7 @@ class HomePage extends Component {
                     <br/>
                     🔗: <a href="https://www.linkedin.com/in/elliot-pourmand">linkedin.com/in/elliot-pourmand</a>
                     <br/>
+                    📄: <a href={Pdf} target="_blank">Resume</a>
                 </div>
             </div>
         )

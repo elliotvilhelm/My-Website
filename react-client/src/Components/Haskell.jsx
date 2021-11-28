@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import '../style.css'
-import rgb1 from '../images/CAT125_color_150_3_123.png'
-import rgb2 from '../images/CAT125_color_150_4_4242.png'
-import rgb3 from '../images/CAT125_color_150_5_99999.png'
-import rgb4 from '../images/CAT125_color_150_6_12.png'
-import rgb5 from '../images/CAT125_color_150_4_222.png'
-import rgb6 from '../images/CAT125_color_150_4_666622.png'
+import rgb1 from '../assets/images/CAT125_color_150_3_123.png'
+import rgb2 from '../assets/images/CAT125_color_150_4_4242.png'
+import rgb3 from '../assets/images/CAT125_color_150_5_99999.png'
+import rgb4 from '../assets/images/CAT125_color_150_6_12.png'
+import rgb5 from '../assets/images/CAT125_color_150_4_222.png'
+import rgb6 from '../assets/images/CAT125_color_150_4_666622.png'
 
 class Haskell extends Component {
     constructor(props) {
